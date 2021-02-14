@@ -11,7 +11,6 @@ const createRow = (arr, current = null) => {
 class Row extends Component {
   render() {
     const { array, current } = this.props;
-    console.log(array);
     return createRow(array, current);
   }
 }

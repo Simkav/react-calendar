@@ -6,19 +6,30 @@ class NumbersRow extends Component {
   render() {
     const { date } = this.props;
     return (
-      <div key={'abc'} className="calendar-rows">
-        {BuildNumberArray(date)}
+      <div className="calendar-rows">
+        {CreateCalendarRows(BuildNumberArray(date))}
       </div>
     );
   }
 }
-
 export default NumbersRow;
+
+const CreateCalendarRows = (arr) => {
+  const currentDay = new Date().getDate();
+  const result = [];
+  arr.forEach((i) => {
+    result.push(
+      <div key={'row' + i} className="row">
+        <Row array={i} current={currentDay} />
+      </div>
+    );
+  });
+  return result;
+};
+
 const BuildNumberArray = (date) => {
-  const currentDay = date.getDate();
   const arr = [];
   const GroupedArr = [];
-  const result = [];
   const STEP = 7;
   for (let i = 0; i < startOfMonth(date).getDay(); i++) {
     arr.push('');
@@ -43,19 +54,5 @@ const BuildNumberArray = (date) => {
     }
     GroupedArr.push(buffer);
   }
-  for (let i = 0; i < GroupedArr.length; i++) {
-    result.push(
-      <>
-        <div className="row">
-          <Row
-            array={GroupedArr[i]}
-            id={i * 10 + 10}
-            key={i * 10 + 10}
-            current={currentDay}
-          />
-        </div>
-      </>
-    );
-  }
-  return result;
+  return GroupedArr;
 };

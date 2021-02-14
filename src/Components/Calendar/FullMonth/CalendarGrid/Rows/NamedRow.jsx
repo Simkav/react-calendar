@@ -8,7 +8,7 @@ class NamedRow extends Component {
     const arr = buildCharArray(date);
     return (
       <div className={classes}>
-        <Row array={arr} id={-1} key={'named'} />
+        <Row array={arr} />
       </div>
     );
   }

@@ -7,8 +7,8 @@ class CalendarGrid extends Component {
     const { date } = this.props;
     return (
       <div className="full-calendar">
-        <NamedRow classes="days row" key="NamedRow" date={date} />
-        <NumbersRow date={date} key={'numbers'} />
+        <NamedRow classes="days row" date={date} />
+        <NumbersRow date={date} />
       </div>
     );
   }

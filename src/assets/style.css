@@ -1,0 +1,75 @@
+@import './reset.css';
+@import './fonts.css';
+* {
+  box-sizing: border-box;
+}
+#root {
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+}
+.calendar {
+  margin: 0 auto;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 153, 145);
+  padding: 10px;
+}
+.half {
+  width: 50%;
+  height: 100%;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-day-view {
+  background-color: #38cec4;
+}
+.calendar-container {
+  background-color: #f5f5f5;
+}
+.info-about-month {
+  margin: 0 auto;
+  color: #2daaa3;
+  font-size: 2rem;
+}
+.name-of-day {
+  color: white;
+  font-size: 3rem;
+}
+.number-of-day {
+  font-size: 12rem;
+  color: white;
+}
+.full-calendar {
+  width: 100%;
+}
+.calendar-rows > * {
+  margin: 5px 0;
+}
+.days {
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+}
+.row > * {
+  font-size: 35px;
+  width: calc(100% / 7);
+  color: #b7b7b7;
+  text-align: center;
+}
+
+.days > * {
+  color: #eb1b57;
+}
+
+.selected-day {
+  border: 0.3px solid #eb1b57;
+}

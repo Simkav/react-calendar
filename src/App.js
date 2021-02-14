@@ -1,8 +1,7 @@
 import Calendar from './Components/Calendar/indes.jsx';
-require('./reset.css');
-require('./style.css');
+require('./assets/style.css');
 function App() {
-  return <Calendar />;
+  return <Calendar date={new Date()} />;
 }
 
 export default App;
